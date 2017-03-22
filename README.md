@@ -84,6 +84,8 @@ alexnet_benchmark.py（forward和backward耗时计算）
 
 alexnet.py（预测与训练）
 
-#### 8.
+#### 8.TensorFlow实现VGGNet-16
+
+VGG.py（forward和backward耗时计算）
 
 
