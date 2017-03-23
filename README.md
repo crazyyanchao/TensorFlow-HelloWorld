@@ -88,4 +88,8 @@ alexnet.py（预测与训练）
 
 VGG.py（forward和backward耗时计算）
 
+#### 9.InceptionNet
+
+InceptionNet-V3.py（forward耗时计算）
+
 
