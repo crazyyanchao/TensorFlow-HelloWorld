@@ -92,4 +92,8 @@ VGG.py（forward和backward耗时计算）
 
 InceptionNet-V3.py（forward耗时计算）
 
+#### 10.ResNet
+
+
+ResNet.py（ResNet 152的forward耗时计算）
 
