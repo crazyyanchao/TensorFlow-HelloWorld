@@ -235,18 +235,20 @@ def resnet_v2_50(inputs, # 图像尺寸缩小了32倍
   blocks = [
       Block('block1', bottleneck, [(256, 64, 1)] * 2 + [(256, 64, 2)]),
 
-      '''
-      Args:：
-      'block1'：Block名称（或scope）
-      bottleneck：ResNet V2残差学习单元
-      [(256, 64, 1)] * 2 + [(256, 64, 2)]：Block的Args，Args是一个列表。其中每个元素都对应一个bottleneck
-                                           前两个元素都是(256, 64, 1)，最后一个是(256, 64, 2）。每个元素
-                                           都是一个三元tuple，即（depth，depth_bottleneck，stride）。
-      (256, 64, 3)代表构建的bottleneck残差学习单元（每个残差学习单元包含三个卷积层）中，第三层输出通道数
-      depth为256，前两层输出通道数depth_bottleneck为64，且中间那层步长3。这个残差学习单元结构为：
-      [(1*1/s1,64),(3*3/s2,64),(1*1/s1,256)]
+      
+      
+      # Args:：
+      # 'block1'：Block名称（或scope）
+      # bottleneck：ResNet V2残差学习单元
+      # [(256, 64, 1)] * 2 + [(256, 64, 2)]：Block的Args，Args是一个列表。其中每个元素都对应一个bottleneck
+      # 前两个元素都是(256, 64, 1)，最后一个是(256, 64, 2）。每个元素
+      #                                    都是一个三元tuple，即（depth，depth_bottleneck，stride）。
+      # (256, 64, 3)代表构建的bottleneck残差学习单元（每个残差学习单元包含三个卷积层）中，第三层输出通道数
+      # depth为256，前两层输出通道数depth_bottleneck为64，且中间那层步长3。这个残差学习单元结构为：
+      # [(1*1/s1,64),(3*3/s2,64),(1*1/s1,256)]
 
-      '''
+
+
 
       Block(
           'block2', bottleneck, [(512, 128, 1)] * 3 + [(512, 128, 2)]),
