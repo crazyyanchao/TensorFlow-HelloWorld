@@ -97,3 +97,10 @@ InceptionNet-V3.py（forward耗时计算）
 
 ResNet.py（ResNet 152的forward耗时计算）
 
+#### 11.TensorBoard、多GPU并行及分布式并行
+
+Distributed.py（分布式并行）
+
+MultiGPU.py（多GPU并行）
+
+TensorBoard.py（可视化）
