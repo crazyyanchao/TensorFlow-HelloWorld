@@ -387,11 +387,11 @@ def time_tensorflow_run(session, target, info_string):
                (datetime.now(), i - num_steps_burn_in, duration))
       total_duration += duration  # 累加便于后面计算每轮耗时的均值和标准差
       total_duration_squared += duration * duration
-  mn = total_duration / FLAGS.num_batches # 每轮迭代的平均耗时
-  vr = total_duration_squared / FLAGS.num_batches - mn * mn 
+  mn = total_duration / num_batches # 每轮迭代的平均耗时
+  vr = total_duration_squared / num_batches - mn * mn 
   sd = math.sqrt(vr) # 标准差
   print ('%s: %s across %d steps, %.3f +/- %.3f sec / batch' %
-         (datetime.now(), info_string, FLAGS.num_batches, mn, sd))
+         (datetime.now(), info_string, num_batches, mn, sd))
 
 batch_size = 32 # 因为网络结构较大依然设置为32，以免GPU显存不够
 height, width = 299, 299 # 图片尺寸
