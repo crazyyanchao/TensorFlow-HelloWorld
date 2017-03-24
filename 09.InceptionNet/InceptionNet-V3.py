@@ -377,7 +377,7 @@ def time_tensorflow_run(session, target, info_string):
   num_steps_burn_in = 10 # 先定义预热轮数（头几轮跌代有显存加载、cache命中等问题因此可以跳过，只考量10轮迭代之后的计算时间）
   total_duration = 0.0 # 记录总时间
   total_duration_squared = 0.0 # 总时间平方和  -----用来后面计算方差
-  for i in xrange(FLAGS.num_batches + num_steps_burn_in): # 迭代轮数
+  for i in range(num_batches + num_steps_burn_in): # 迭代轮数
     start_time = time.time() # 记录时间
     _ = session.run(target) # 每次迭代通过session.run(target)
     duration = time.time() - start_time # 
